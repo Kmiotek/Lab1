@@ -7,6 +7,13 @@ public class World {
     public static void main(String[] args) {
         System.out.println("System rozpoczął pracę:");
 
+        Direction dir[] = translator(args);
+
+        World.run(dir);
+        System.out.println("System zakończył pracę:");
+    }
+
+    public static Direction[] translator(String[] args){
         Direction dir[] = new Direction[args.length];
 
         int i =0;
@@ -23,9 +30,7 @@ public class World {
             }
             i++;
         }
-
-        World.run(dir);
-        System.out.println("System zakończył pracę:");
+        return dir;
     }
 
     public static void run(Direction[] tab){
